@@ -1,0 +1,41 @@
+steamer: #内部名
+  name: 蒸し器 #表示名
+  slots: #スロット
+    - _________
+    - __P_P_P__
+    - ___P_P___
+    - __P_P_P__
+    - ___P_P___
+    - __P_P_P__
+    - _B_____S_
+  icons:
+    - icon: _ #スロット設定での指定アイコン
+      type: NoEffect #タイプ 効果なし
+      material: BLUE_STAINED_GLASS_PANE #マテリアル
+      name: §b水 #名前
+    - icon: P #スロット設定での指定アイコン
+      type: Pocket #タイプ 空っぽ アイテムを入れられる
+    - icon: S #スロット設定での指定アイコン
+      type: Switch #タイプ スイッチ　押した先のアイコン指定
+      switch-icon: T #スイッチ先
+      material: RED_STAINED_GLASS_PANE #マテリアル
+      name: §cオフ状態 #名前
+      lore:
+        - クリックで起動
+    - icon: T
+      type: Switch
+      switch-icon: S
+      material: LIME_STAINED_GLASS_PANE
+      name: $aオン状態
+      lore:
+        - クリックで停止
+    - icon: B
+      type: Button
+      material: DIAMOND_BLOCK
+      name: あおぐ
+
+
+
+
+
+

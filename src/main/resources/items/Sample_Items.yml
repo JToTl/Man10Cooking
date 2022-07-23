@@ -1,0 +1,13 @@
+steamed_carrot: #内部名
+  type: CARROT #マテリアル
+  name: 蒸しにんじん #名前
+  cmd: 0 #下スタムモデルデータ
+  lore: #ロア
+    - 蒸しておいしくなったにんじん
+    - なんかいいかんじ！
+  commands: #食べた時に実行されるコマンド
+    - say 美味しい！
+    - give <player> diamond
+  foodLevel: 4 #回復する満腹度
+  saturationLevel: 5 #回復する隠し満腹度.バニラの仕様を引継ぎデフォルトでは現在満腹度以上にならない
+  over_saturation: false #満腹度以上になるか

@@ -1,0 +1,8 @@
+name: Man10Cooking
+version: @version@
+main: ltotj.minecraft.man10cooking.Main
+api-version: 1.17
+
+commands:
+  mcookop:
+    usage: ""

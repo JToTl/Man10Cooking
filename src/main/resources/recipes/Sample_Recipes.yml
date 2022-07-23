@@ -1,0 +1,23 @@
+steamed_carrot_recipe: #内部名
+  equipment: steamer #調理用具
+  phase: #調理のフェーズ
+    - time: 60000 #フェーズの時間
+      required_actions: #必要なアクション
+      - action: Click #クリック
+        interval: 1000 #クリックのインターバル
+        required_times: 2 #必要な回数
+        clicked_slot: item #クリックされるスロット.itemはそれ自身.buttonは調理用具に設定されているボタン.button2なども設定されていれば可能
+      fail: garbage #このフェーズで失敗した場合のアイテム
+    - time: 60000 #フェーズの時間
+      required_actions: #必要なアクション
+      - action: Click #クリック
+        interval: 1000 #クリックのインターバル
+        required_times: 1 #必要な回数
+      - action: AddItem #アイテム追加
+        slot: 10 #追加するスロット
+        eject: true #追加したあと消えるかどうか
+        item: WATER_BUKKET #追加するアイテム.マテリアル指定またはitemsにある内部名指定
+        item_name: 美味しい水 #アイテム名
+  allowed_over_time: 100000 #完成してから取り出すまでの時間.未記入の場合制限なし
+  success: steamed_carrot #できる料理
+  fail: dust #失敗したときのアイテム.フェーズで設定してない場合これになる
