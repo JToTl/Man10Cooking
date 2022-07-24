@@ -164,6 +164,7 @@ open class GUIItem: ItemStack {
     }
 
     fun reload(){
+        if(gui==null)return
         for(slot in gui().items.keys){
             if(gui().items[slot]==this){
                 gui().renderItem(slot)

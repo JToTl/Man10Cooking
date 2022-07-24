@@ -205,6 +205,15 @@ abstract class GUIInventory(private val plugin: JavaPlugin,val row:Int,val title
         })
     }
 
+    fun changeItem(newItem:GUIItem,oldItem:GUIItem){
+        for (slot in items.keys){
+            if(getItem(slot)==oldItem){
+                setItem(slot,newItem)
+            }
+        }
+        renderGUI()
+    }
+
     @EventHandler
     fun onClose(e:InventoryCloseEvent){
         if(!invPlayerList.contains(e.player.uniqueId))return

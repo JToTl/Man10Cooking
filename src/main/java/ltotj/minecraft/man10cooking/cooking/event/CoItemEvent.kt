@@ -13,9 +13,11 @@ object CoItemEvent:Listener {
 
     @EventHandler
     fun eatCookedItem(e:PlayerItemConsumeEvent){
+        if(e.isCancelled){
+            return
+        }
         val item=ItemStackPlus(e.item)
         val key=item.getNBTString("name",Main.plugin)
-        println(key)
         if(Main.cookingItems.containsKey(key)) {
             e.isCancelled = true
             if (consume(e.player, e.item)) {

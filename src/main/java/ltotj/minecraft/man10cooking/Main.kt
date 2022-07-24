@@ -3,7 +3,7 @@ package ltotj.minecraft.man10cooking
 import ltotj.minecraft.man10cooking.command.OPCommand
 import ltotj.minecraft.man10cooking.cooking.EquipmentEvent
 import ltotj.minecraft.man10cooking.cooking.data.cookItem.CoItemData
-import ltotj.minecraft.man10cooking.cooking.data.equipment.EquipmentData
+import ltotj.minecraft.man10cooking.cooking.data.equipment.BaseEquipment
 import ltotj.minecraft.man10cooking.cooking.event.CoItemEvent
 import ltotj.minecraft.man10cooking.utility.ConfigManager.ConfigManager
 import org.bukkit.Material
@@ -21,11 +21,15 @@ class Main : JavaPlugin() {
         lateinit var plugin: JavaPlugin
         const val pluginTitle="Man10Cooking"
         val cookingItems=HashMap<String, CoItemData>()
-        val equipments=HashMap<String,EquipmentData>()
+        val equipments=HashMap<String, BaseEquipment>()
+
+
+
         lateinit var con:FileConfiguration
         lateinit var equipmentsFile: File
         lateinit var recipesFile: File
         lateinit var coItemsFile: File
+
         var opCommand: OPCommand?=null
 
         fun loadConfig(){
@@ -48,7 +52,7 @@ class Main : JavaPlugin() {
             for(file in fileList){
                 val configFile=YamlConfiguration.loadConfiguration(file)
                 for(key in configFile.getKeys(false)){
-                    EquipmentData(key,configFile)
+                    BaseEquipment(key,configFile)
                 }
             }
             opCommand?.reloadCoItemComplete()
